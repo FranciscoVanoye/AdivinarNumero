@@ -16,18 +16,23 @@ public class AdivinarNum {
         ran = r.nextInt(99)+1;
         System.out.println("Se genero un numero random del 1 al 100\n");
         for (int i = 0; i < 5; i++) {
-            System.out.println(ran);
-            System.out.println("Intenta adivinarlo, tienes " + intentos + " intentos");
+ 
+            System.out.println("Te quedan " + intentos + " intentos");
             System.out.print("Ingrese numero: ");
             adivinar = s.nextInt();
                     
             if (adivinar == ran) {
                 System.out.println("\nFelicidades acertaste al numero\n");
                 i = 5;
-            }else {
+            }else{
                 intentos = intentos - 1;
                 System.out.println("\nEl numero es erroneo, te quedan " + intentos  + " intentos\n");
                 
+            }
+            if (adivinar < ran) {
+                System.out.println("El numero que ingresaste es menor al random\n");
+            }else if (adivinar > ran) {
+                System.out.println("El numero que ingresaste es mayor al random\n");
             }
         }
         System.out.println("\nEl numero era " + ran +"");
